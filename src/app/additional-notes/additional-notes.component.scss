@@ -1,0 +1,22 @@
+.adNotes{
+    padding-top: 20px;
+    table{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+
+        td{
+            width: 33%;
+        }
+
+        img{
+            width: 35px;
+            filter: drop-shadow(0 0 0.5rem #75E6DA);
+        }
+    }
+    .adNotes-text{
+        text-align: center;
+        margin-top: 30px;
+    }
+}

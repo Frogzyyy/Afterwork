@@ -1,0 +1,15 @@
+span{
+    background-color: rgb(212,241,244,0.2);
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: bold;
+    will-change: transform,opacity;
+    transition: all 0.4s ease-in-out;
+    margin: 0 5px;
+}
+span:hover,span.focus{
+    cursor: pointer;
+    color: #75E6DA;
+    opacity: 0.8;
+    background-color: rgb(212,241,244,0.3);
+}
