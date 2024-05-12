@@ -1,0 +1,10 @@
+<div class="recipe" [style.background-image]="'url('+recipe.imageURL">
+    <h1>
+        {{recipe.title}}
+        <p>
+            <a (click)="onViewUserProfile(author.id)" class="author">
+            by {{author.name}}
+            </a>
+        </p>
+    </h1>
+</div>

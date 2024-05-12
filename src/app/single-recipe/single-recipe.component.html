@@ -1,0 +1,48 @@
+<div class="recipe-container">
+
+    <div class="recipe">
+        <h1>{{recipe.title}}</h1>
+        by <a class="author" (click)="onViewUserProfile()">{{author.name}}
+            <img class="profile-picture" src="{{author.profilePictureURL}}">
+        </a>
+        <div class="container" *ngIf="recipe.types">
+            <h2>Recipe tags</h2>
+            <div class="item">
+                <app-tags-section *ngFor="let type of recipe.types" [tag]="type"></app-tags-section>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Ingredients</h2>
+            <div class="item">
+                <app-ingredient *ngFor="let ingredient of recipe.ingredients" [ingredient]="ingredient"></app-ingredient>
+            </div>
+        </div>
+
+        <div class="container">
+            <img class="item" *ngIf="recipe.imageURL" src="{{recipe.imageURL}}" alt="">
+        </div>
+
+        <div *ngIf="recipe.linkedRecipes" class="container">
+            <h2>Recipes you may need for this one</h2>
+            <div class="linked-recipes">
+                <app-linked-recipe *ngFor="let recipe of linkedRecipes" [recipe]="recipe"></app-linked-recipe>
+            </div>
+        </div>
+
+        <div *ngIf="recipe.adNotes" class="container">
+            <h2>Additional Notes</h2>
+            <div class="item">
+                <app-additional-notes [adNotes]="recipe.adNotes"></app-additional-notes>
+            </div>
+        </div>
+
+        <div *ngIf="recipe.method[0] != ''" class="container">
+            <h2>Recipe</h2>
+            <div class="item">
+                <ol>
+                    <app-recipe-method *ngFor="let step of recipe.method" [method]="step"></app-recipe-method>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="adNotes">
+    <table>
+        <tr>
+            <td>
+                <img src="../../assets/img/logos/timer.png" alt="">
+            </td>
+            <td *ngIf="adNotes.cookingTime">
+                <img src="../../assets/img/logos/cooking-time.png" alt="">
+            </td>
+            <td>
+                <img src="../../assets/img/logos/difficulty.png" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{adNotes.overAllTime}} min
+            </td>
+            <td *ngIf="adNotes.cookingTime">
+                {{adNotes.cookingTime}} min
+            </td>
+            <td>
+                {{adNotes.difficulty}}
+            </td>
+        </tr>
+    </table>
+    <p class="adNotes-text">
+        {{adNotes.text}}
+    </p>
+</div>

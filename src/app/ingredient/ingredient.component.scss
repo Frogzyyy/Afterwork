@@ -1,0 +1,11 @@
+table{
+    width: 100%;
+    border-bottom:1px solid;
+    border-left:100px solid transparent;
+    border-right:100px solid transparent;
+    font-size: medium;
+
+    .amount{
+        text-align: right;
+    } 
+}

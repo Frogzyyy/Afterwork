@@ -1,0 +1,15 @@
+<table>
+    <tr>
+        <td class="name">
+            {{this.ingredient.name | titlecase}}
+        </td>
+        <td class="amount">
+            <p *ngIf="ingredient">
+                <span *ngIf="ingredient.type=='solid'">{{this.ingredient.amount}} g</span>
+                <span *ngIf="ingredient.type=='liquid'">{{this.ingredient.amount}} mL</span>
+                <span *ngIf="ingredient.type=='unit'">{{this.ingredient.amount}}</span>
+                <span *ngIf="ingredient.type=='FM'">As a reminder</span>
+            </p>
+        </td>
+    </tr>
+</table>
