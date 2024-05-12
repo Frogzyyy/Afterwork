@@ -13,9 +13,9 @@ import { UserService } from '../services/user.service';
 })
 export class SingleRecipeComponent implements OnInit
 {
-  recipe!:Recipe;
-  author!:User;
-  linkedRecipes!:Recipe[];
+  recipe$!:Observable<Recipe>;
+  author$!:Observable<User>;
+  linkedRecipes$!:Observable<Recipe[]>;
 
   constructor(
     private recipeService:recipeService,
@@ -25,13 +25,13 @@ export class SingleRecipeComponent implements OnInit
 
   ngOnInit()
   {
-    this.recipe = this.recipeService.getRecipeByID(+this.route.snapshot.params['id']);
-    this.author = this.recipeService.getAuthor(this.recipe.id);
-    this.linkedRecipes = this.recipeService.getLinkedRecipesByID(this.recipe.id);
+    //this.recipe$ = this.recipeService.getRecipeByID(+this.route.snapshot.params['id']);
+    //this.author$ = this.recipeService.getAuthor(this.recipe.id);
+    //this.linkedRecipes$ = this.recipeService.getLinkedRecipesByID(this.recipe.id);
   }
 
   onViewUserProfile()
   {
-    this.userService.navigateToUserProfileById(this.author.id);
+    //));
   }
 }

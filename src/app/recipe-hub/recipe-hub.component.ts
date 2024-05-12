@@ -1,6 +1,7 @@
 import { Component,Input,OnInit } from '@angular/core';
 import { Recipe } from '../models/recipe.model';
 import { recipeService } from '../services/recipe.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-hub',
@@ -11,11 +12,11 @@ export class RecipeHubComponent implements OnInit
 {
   constructor(private recipeService:recipeService){}
 
-  @Input() recipes!:Recipe[];  
+  @Input() recipes$!:Observable<Recipe[]>;  
 
   ngOnInit()
   {
-    this.recipes=this.recipeService.getAllRecipes();
+    this.recipes$=this.recipeService.getAllRecipes();
   }
   onViewRecipe(recipeID:number)
   {

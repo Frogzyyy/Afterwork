@@ -21,7 +21,7 @@ export class RecipeComponent implements OnInit
 
   ngOnInit()
   {
-    this.author = this.recipeService.getAuthor(this.recipe.id);
+   // this.author = this.recipeService.getAuthor(this.recipe.id);
   }
 
   onViewUserProfile(userID:number)

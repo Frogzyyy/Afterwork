@@ -4,6 +4,7 @@ import { recipeService } from '../services/recipe.service';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../models/user.model';
 import { Recipe } from '../models/recipe.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user-profile',
@@ -19,12 +20,12 @@ export class UserProfileComponent implements OnInit
   ){}
 
   user!:User;
-  userRecipes!:Recipe[];
+  userRecipes$!:Observable<Recipe[]>;
 
   ngOnInit()
   {
     this.user = this.userService.getUserByID(+this.route.snapshot.params['id']);
-    this.userRecipes = this.recipeService.getRecipesByUserID(this.user.id);
+    // this.userRecipes$ = this.recipeService.getRecipesByUserID(this.user.id);
   }
 
   onViewRecipe(recipeID:number)
