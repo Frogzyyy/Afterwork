@@ -15,6 +15,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TagsSectionComponent } from './tags-section/tags-section.component';
 import { LinkedRecipeComponent } from './linked-recipe/linked-recipe.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BrowserModule,
     AppRoutingModule,
     DragDropModule,
+    HttpClientModule,
     [LinkedRecipeComponent]
   ],
   providers: [

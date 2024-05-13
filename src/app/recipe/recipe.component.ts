@@ -3,6 +3,7 @@ import { Recipe } from '../models/recipe.model';
 import { recipeService } from '../services/recipe.service';
 import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-recipe',
@@ -17,11 +18,11 @@ export class RecipeComponent implements OnInit
   ){}
 
   @Input() recipe!:Recipe;
-  author!:User;
+  author$!:Observable<User>;
 
   ngOnInit()
   {
-   // this.author = this.recipeService.getAuthor(this.recipe.id);
+    this.author$ = this.recipeService.getAuthor(this.recipe.authorID);
   }
 
   onViewUserProfile(userID:number)

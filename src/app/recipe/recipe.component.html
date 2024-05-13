@@ -2,7 +2,7 @@
     <h1>
         {{recipe.title}}
         <p>
-            <a (click)="onViewUserProfile(author.id)" class="author">
+            <a *ngIf="author$ | async as author" (click)="onViewUserProfile(author.id)" class="author">
             by {{author.name}}
             </a>
         </p>

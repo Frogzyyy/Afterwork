@@ -1,10 +1,10 @@
-<div class="recipe" cdkDrag [cdkDragFreeDragPosition]="drapPosition" [style.background-image]="'url('+recipe.imageURL">
+<div class="recipe" *ngIf="recipe$ | async as recipe" cdkDrag [cdkDragFreeDragPosition]="drapPosition" [style.background-image]="'url('+recipe.imageURL">
   <button (click)="reInitPosition()">X</button>
   <h1>
       {{recipe.title}}
       <p>
-          <a (click)="onViewUserProfile()" class="author">
-          by {{author.name}}
+          <a *ngIf="author$ | async as author" (click)="onViewUserProfile()" class="author">
+          by {{author}}
           </a>
       </p>
   </h1>

@@ -1,18 +1,17 @@
-<div class="profile-container">
+<div class="profile-container" *ngIf="user$ | async as user">
 
     <div class="user-profile">
         <img class="profile-picture" *ngIf="user.profilePictureURL" [src]="user.profilePictureURL">
         <h1>{{user.name}}</h1>
 
-        <h2>About me</h2>
-
         <div *ngIf="user.description" class="item">
+            <h2>About me</h2>
             <p>
                 {{user.description}}
             </p>
         </div>
 
-        <div *ngIf="userRecipes.length != 0">
+        <div *ngIf="userRecipes">
             <h2>{{user.name}}'s recipes</h2>
             <div class="item">
                 <app-recipe *ngFor="let recipe of userRecipes" (click)="onViewRecipe(recipe.id)" [recipe]="recipe"></app-recipe>

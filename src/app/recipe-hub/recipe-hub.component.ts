@@ -18,6 +18,7 @@ export class RecipeHubComponent implements OnInit
   {
     this.recipes$=this.recipeService.getAllRecipes();
   }
+
   onViewRecipe(recipeID:number)
   {
     this.recipeService.navigateToRecipeByID(recipeID);

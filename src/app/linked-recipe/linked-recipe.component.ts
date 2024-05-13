@@ -1,10 +1,9 @@
 import { Component,Input,OnInit } from '@angular/core';
-import { CdkDrag, CdkDragDrop, CdkDragPreview, Point } from '@angular/cdk/drag-drop';
+import { CdkDrag, Point } from '@angular/cdk/drag-drop';
 import { Recipe } from '../models/recipe.model';
 import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
-
-
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-linked-recipe',
@@ -15,16 +14,17 @@ import { UserService } from '../services/user.service';
 })
 export class LinkedRecipeComponent implements OnInit
 {
-  @Input () recipe!:Recipe;
-  author!:User;
+  @Input () recipe$!:Observable<Recipe>;
+  author$!:Observable<User>;
+  authorID!:number;
   drapPosition:Point = {x:0,y:0};
 
   constructor(private userService:UserService){}
 
   ngOnInit()
   {
-    this.author = this.userService.getUserByID(this.recipe.authorID);
-
+    this.recipe$.subscribe(val => this.authorID = val.authorID);
+    this.author$ = this.userService.getUserByID(this.authorID);
   }
 
   reInitPosition()
@@ -34,6 +34,6 @@ export class LinkedRecipeComponent implements OnInit
 
   onViewUserProfile()
   {
-    this.userService.navigateToUserProfileById(this.author.id);
+    this.userService.navigateToUserProfileById(this.authorID);
   }
 }
