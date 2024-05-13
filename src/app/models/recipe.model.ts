@@ -10,7 +10,7 @@ export class Recipe
   title!:string;
   ingredients!:Ingredient[];
   adNotes?:AdditionalNotes;
-  method!:string[];
+  method?:string[];
   authorID!:number;
   linkedRecipes?:number[];
 }

@@ -1,6 +1,6 @@
 <div class="recipe" [style.background-image]="'url('+recipe.imageURL">
     <h1>
-        {{recipe.title}}
+        {{recipe.title|titlecase}}
         <p>
             <a (click)="onViewUserProfile(author.id)" class="author">
             by {{author.name}}

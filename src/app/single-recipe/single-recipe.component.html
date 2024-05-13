@@ -18,6 +18,13 @@
             </div>
         </div>
 
+        <div *ngIf="recipe.adNotes" class="container">
+            <h2>Additional Notes</h2>
+            <div class="item">
+                <app-additional-notes [adNotes]="recipe.adNotes"></app-additional-notes>
+            </div>
+        </div>
+
         <div class="container">
             <img class="item" *ngIf="recipe.imageURL" src="{{recipe.imageURL}}" alt="">
         </div>
@@ -29,14 +36,7 @@
             </div>
         </div>
 
-        <div *ngIf="recipe.adNotes" class="container">
-            <h2>Additional Notes</h2>
-            <div class="item">
-                <app-additional-notes [adNotes]="recipe.adNotes"></app-additional-notes>
-            </div>
-        </div>
-
-        <div *ngIf="recipe.method[0] != ''" class="container">
+        <div *ngIf="recipe.method" class="container">
             <h2>Recipe</h2>
             <div class="item">
                 <ol>
