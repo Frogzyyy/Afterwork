@@ -2,23 +2,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-    text-shadow: -1px 1px 0 #1C1C1F,
-    1px 1px 0 #1C1C1F,
-    1px -1px 0 #1C1C1F,
-    -1px -1px 0 #1C1C1F;
-transition: all 0.3s ease-in-out;
-border-radius: 10px;
+
+    text-shadow:
+        -1px 1px 0 #1C1C1F,
+        1px 1px 0 #1C1C1F,
+        1px -1px 0 #1C1C1F,
+        -1px -1px 0 #1C1C1F;
+        
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
 
     width: 200px;
     height: 200px;
 
-    
     background-color: #1C1C1F;
     background-size: cover;
     background-repeat: no-repeat;
-    
     h1{
         font-size: 20px;
     }
@@ -28,7 +28,6 @@ border-radius: 10px;
         font-weight: lighter;
     }
 }
-
 .recipe:hover,.recipe.focus{
     cursor: pointer;
     opacity: 0.9;

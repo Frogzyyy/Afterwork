@@ -15,6 +15,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TagsSectionComponent } from './tags-section/tags-section.component';
 import { LinkedRecipeComponent } from './linked-recipe/linked-recipe.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { NewRecipeComponent } from './new-recipe/new-recipe.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     RecipeMethodComponent,
     SingleRecipeComponent,
     UserProfileComponent,
-    TagsSectionComponent
+    TagsSectionComponent,
+    NewRecipeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DragDropModule,
+    ReactiveFormsModule,
     [LinkedRecipeComponent]
   ],
   providers: [

@@ -1,15 +1,15 @@
-<div class="profile-container">
+<div class="container">
 
     <div class="user-profile">
-        <img class="profile-picture" *ngIf="user.profilePictureURL" [src]="user.profilePictureURL">
+        <img *ngIf="!user.profilePictureURL" class="profile-picture" src="../assets/img/profile-pictures/profile-picture.png">
+        <img *ngIf="user.profilePictureURL" class="profile-picture" src="{{user.profilePictureURL}}" alt="">
         <h1>{{user.name}}</h1>
 
-        <h2>About me</h2>
-
-        <div *ngIf="user.description" class="item">
-            <p>
+        <div *ngIf="user.description">
+            <h2>About me</h2>
+            <div class="item">
                 {{user.description}}
-            </p>
+            </div>
         </div>
 
         <div *ngIf="userRecipes.length != 0">

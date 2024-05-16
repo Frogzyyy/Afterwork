@@ -1,14 +1,16 @@
 <div class="recipe" cdkDrag [cdkDragFreeDragPosition]="drapPosition" [style.background-image]="'url('+recipe.imageURL">
-  <button (click)="reInitPosition()">X</button>
+  <button (click)="reInitPosition()" class="exit">X</button>
   <h1>
       {{recipe.title}}
       <p>
           <a (click)="onViewUserProfile()" class="author">
           by {{author.name}}
           </a>
+          
       </p>
   </h1>
   <div>
-
+    {{recipe.ingredients}}
+    
   </div>
 </div>

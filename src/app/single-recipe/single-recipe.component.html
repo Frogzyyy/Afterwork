@@ -1,42 +1,47 @@
-<div class="recipe-container">
-
+<div class="container">
     <div class="recipe">
         <h1>{{recipe.title}}</h1>
         by <a class="author" (click)="onViewUserProfile()">{{author.name}}
-            <img class="profile-picture" src="{{author.profilePictureURL}}">
+            <img *ngIf="!author.profilePictureURL" class="profile-picture" src="../assets/img/profile-pictures/profile-picture.png">
+            <img *ngIf="author.profilePictureURL" class="profile-picture" src="{{author.profilePictureURL}}" alt="">
         </a>
-        <div class="container" *ngIf="recipe.types">
+
+        <div *ngIf="recipe.types">
             <h2>Recipe tags</h2>
             <div class="item">
                 <app-tags-section *ngFor="let type of recipe.types" [tag]="type"></app-tags-section>
             </div>
         </div>
-        <div class="container">
-            <h2>Ingredients</h2>
-            <div class="item">
-                <app-ingredient *ngFor="let ingredient of recipe.ingredients" [ingredient]="ingredient"></app-ingredient>
+
+        <div *ngIf="recipe.imageURL">
+            <h2>Some Pictures</h2>
+            <div class="recipe-picture" >
+                <img *ngFor="let picture of recipe.imageURL" src="{{picture}}" alt="">
             </div>
         </div>
 
-        <div *ngIf="recipe.adNotes" class="container">
+        <div *ngIf="recipe.adNotes">
             <h2>Additional Notes</h2>
             <div class="item">
                 <app-additional-notes [adNotes]="recipe.adNotes"></app-additional-notes>
             </div>
         </div>
 
-        <div class="container">
-            <img class="item" *ngIf="recipe.imageURL" src="{{recipe.imageURL}}" alt="">
+        <div>
+            <h2>Ingredients</h2>
+            <div class="item">
+                <app-ingredient *ngFor="let ingredient of recipe.ingredients" [ingredient]="ingredient"></app-ingredient>
+            </div>
         </div>
 
-        <div *ngIf="recipe.linkedRecipes" class="container">
+        <div *ngIf="recipe.linkedRecipes">
             <h2>Recipes you may need for this one</h2>
             <div class="linked-recipes">
                 <app-linked-recipe *ngFor="let recipe of linkedRecipes" [recipe]="recipe"></app-linked-recipe>
             </div>
         </div>
 
-        <div *ngIf="recipe.method" class="container">
+        <div *ngIf="recipe.method">
             <h2>Recipe</h2>
             <div class="item">
                 <ol>

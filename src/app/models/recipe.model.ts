@@ -5,12 +5,12 @@ import { recipeType } from "./recipe-type.model";
 export class Recipe
 {
   id!:number;
-  types?:recipeType[];
-  imageURL!:string;
+  authorID!:number;
   title!:string;
+  types?:recipeType[];
+  imageURL!:string[];
   ingredients!:Ingredient[];
   adNotes?:AdditionalNotes;
   method?:string[];
-  authorID!:number;
   linkedRecipes?:number[];
 }

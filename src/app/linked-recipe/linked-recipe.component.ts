@@ -1,10 +1,8 @@
 import { Component,Input,OnInit } from '@angular/core';
-import { CdkDrag, CdkDragDrop, CdkDragPreview, Point } from '@angular/cdk/drag-drop';
+import { CdkDrag,Point } from '@angular/cdk/drag-drop';
 import { Recipe } from '../models/recipe.model';
 import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
-
-
 
 @Component({
   selector: 'app-linked-recipe',
@@ -24,7 +22,6 @@ export class LinkedRecipeComponent implements OnInit
   ngOnInit()
   {
     this.author = this.userService.getUserByID(this.recipe.authorID);
-
   }
 
   reInitPosition()

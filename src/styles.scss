@@ -28,26 +28,63 @@ color: (
 // that you are using.
 @include mat.all-component-themes($Afterwork-theme);
 
-body {
+@keyframes gradient {
+	0%{
+		background-position: 0% 50%;
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100%{
+		background-position: 0% 50%;
+	}
+}
+
+html,body{
+	height: 100vh;
+}
+body{
+	margin: 0;
+	height: 100vh;
+    color: #E0E2E8;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	//animated linear-gradient
 	background: linear-gradient(-45deg, #1C1C1F, #004f80 );
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
-	height: 100vh;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #E0E2E8;
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+h1{
+	padding:40px;
+	font-size: 70px;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h2{
+	color: #B0C0D4;
+}
+
+.container{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+    background: rgb(98, 98, 98,0.4);
+    border-radius: 20px;
+    width:57%;
+    margin: 20px auto;
+    padding: 30px;
+}
+
+.item{
+	width: 100%;
+	font-size: larger;
+	background-color: rgb(212,241,244,0.1);
+	box-shadow:
+	rgba(0,0,0,0.4) 0px 2px 4px,
+	rgba(0,0,0,0.3) 0px 7px 13px -3px ,
+	rgba(0,0,0,0.2) 0px -3px 0px inset;
+	text-align: justify;
+	padding: 15px;
+	border-radius: 10px;
+}  

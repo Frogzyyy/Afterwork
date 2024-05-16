@@ -12,7 +12,7 @@ export class recipeDB
           {name:"dessert"},
           {name:"pastry"}
         ],
-        imageURL:"../../assets/img/recipes/fondant-chocolat.jpg",
+        imageURL:["../../assets/img/recipes/fondant-chocolat.jpg"],
         title: "Fondant Chocolate Cake",
         ingredients:[
           {name: "Dark Chocolate",amount: 200,type: "solid"},
@@ -38,7 +38,7 @@ export class recipeDB
 
       {
         id: 2,
-        imageURL:"../../assets/img/recipes/roux.jpg",
+        imageURL:["../../assets/img/recipes/roux.jpg"],
         title: "Roux",
         types:[
           {name:"prep"},
@@ -65,7 +65,7 @@ export class recipeDB
 
       {
         id: 3,
-        imageURL:"../../assets/img/recipes/frozen-yogurt.jpg",
+        imageURL:["../../assets/img/recipes/frozen-yogurt.jpg"],
         title: "Frozen yogurt",
         types:[
           {name:"dessert"},
@@ -94,7 +94,7 @@ export class recipeDB
 
       {
         id: 4,
-        imageURL:"../../assets/img/recipes/crêpes.jpg",
+        imageURL:["../../assets/img/recipes/crêpes.jpg"],
         title: "Crêpes",
         types:[
           {name:"dessert"}
@@ -123,7 +123,7 @@ export class recipeDB
 
       {
         id: 5,
-        imageURL:"../../assets/img/recipes/cake-banane.png",
+        imageURL:["../../assets/img/recipes/cake-banane.png"],
         title: "Banana cake without yeast",
         types:[
           {name:"dessert"},
@@ -153,7 +153,7 @@ export class recipeDB
 
       {
         id: 6,
-        imageURL:"../../assets/img/recipes/spinach-sauce.jpg",
+        imageURL:["../../assets/img/recipes/spinach-sauce.jpg"],
         title: "Spinach Sauce",
         types:[
           {name:"sauce"},
@@ -175,7 +175,7 @@ export class recipeDB
 
       {
         id: 7,
-        imageURL:"../../assets/img/recipes/chicken-stock.webp",
+        imageURL:["../../assets/img/recipes/chicken-stock.webp"],
         title: "Chicken Stock",
         types: [
           {name:"prep"},
@@ -192,7 +192,7 @@ export class recipeDB
       {
         id: 8,
         title: "Northern Standard",
-        imageURL: "../../assets/img/recipes/northern-standard.jpg",
+        imageURL:["../../assets/img/recipes/northern-standard.jpg"],
         types: [
           {name:"cocktail"}
         ],

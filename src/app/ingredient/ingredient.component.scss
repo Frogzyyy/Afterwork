@@ -1,11 +1,11 @@
-table{
+.ingredient{
     width: 100%;
-    border-bottom:1px solid;
-    border-left:100px solid transparent;
-    border-right:100px solid transparent;
     font-size: medium;
-
-    .amount{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    .ingredient-amount{
         text-align: right;
-    } 
+    }
 }
+
