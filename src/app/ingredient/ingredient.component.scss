@@ -1,11 +1,13 @@
 .ingredient{
     width: 100%;
-    font-size: medium;
+    font-size: 90%;
     display: grid;
+    margin-left: 10%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     .ingredient-amount{
         text-align: right;
+        margin-right: 50%;
     }
 }
 

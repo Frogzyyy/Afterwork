@@ -1,3 +1,3 @@
-<div class="container">
-      <app-recipe *ngFor="let recipe of recipes" (click)="onViewRecipe(recipe.id)" [recipe]="recipe"></app-recipe>
+<div class="recipe-hub-container">
+      <app-recipe-card *ngFor="let recipe of recipes" (click)="onViewRecipe(recipe.id)" [recipe]="recipe"></app-recipe-card>
 </div>

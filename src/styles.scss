@@ -5,9 +5,9 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
+
 $Afterwork-primary: mat.define-palette(mat.$indigo-palette);
 $Afterwork-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
 // The warn palette is optional (defaults to red).
 $Afterwork-warn: mat.define-palette(mat.$red-palette);
 
@@ -28,35 +28,23 @@ color: (
 // that you are using.
 @include mat.all-component-themes($Afterwork-theme);
 
-@keyframes gradient {
-	0%{
-		background-position: 0% 50%;
-	}
-	50%{
-		background-position: 100% 50%;
-	}
-	100%{
-		background-position: 0% 50%;
-	}
-}
 
+//**************************************************GENERAL STYLE SETTINGS************************************************************
 html,body{
 	height: 100vh;
 }
 body{
-	margin: 0;
-	height: 100vh;
-    color: #E0E2E8;
+  background-image: url("./assets/img/logos/background-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #E0E2E8;
 	font-family: Roboto, "Helvetica Neue", sans-serif;
-	//animated linear-gradient
-	background: linear-gradient(-45deg, #1C1C1F, #004f80 );
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+  margin: 0;
 }
 
 h1{
-	padding:40px;
-	font-size: 70px;
+	font-size: 60px;
 }
 
 h2{
@@ -65,15 +53,15 @@ h2{
 
 .container{
 	display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 	flex-wrap: wrap;
 	gap: 10px;
-    background: rgb(98, 98, 98,0.4);
-    border-radius: 20px;
-    width:57%;
-    margin: 20px auto;
-    padding: 30px;
+  background-color: rgba(48, 48, 48, 0.5);
+  border-radius: 20px;
+  width:57%;
+  margin: 20px auto;
+  padding: 30px;
 }
 
 .item{
@@ -87,4 +75,71 @@ h2{
 	text-align: justify;
 	padding: 15px;
 	border-radius: 10px;
-}  
+}
+//**************************************************RECIPE CARDS STYLE SETTINGS************************************************************
+.recipe-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-shadow:
+      -1px 1px 0 #1C1C1F,
+      1px 1px 0 #1C1C1F,
+      1px -1px 0 #1C1C1F,
+      -1px -1px 0 #1C1C1F;
+  box-shadow:
+    rgba(0,0,0,0.4) 0px 2px 4px,
+      rgba(0,0,0,0.3) 0px 7px 13px -3px ,
+      rgba(0,0,0,0.2) 0px -3px 0px inset;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  background-color: #1C1C1F;
+  background-size: cover;
+  background-repeat: no-repeat;
+  h1{
+      font-size: 20px;
+  }
+  .author{
+      color: #B0C0D4;
+      font-size: 15px;
+      font-weight: lighter;
+  }
+}
+.recipe-card:hover,.recipe-card.focus{
+  cursor: pointer;
+  opacity: 0.9;
+  background-color: rgb(212,241,244,0.3);
+  transform: rotate(0.5deg) scale(0.95);
+
+  a:hover{
+      text-decoration: underline;
+  }
+}
+
+//**************************************************BUTTONS STYLE SETTINGS*****************************************************************
+
+button{
+  align-items: center;
+  background-color: rgb(212,241,244,0.3);
+  border-radius: 24px;
+  border-style: none;
+  color: #E0E2E8;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  height: 48px;
+  letter-spacing: .30px;
+  padding: 2px 24px;
+  margin-top: 30px;
+  text-align: center;
+  width: auto;
+  will-change: transform,opacity;
+  transition: all 0.4s ease-in-out;
+}
+
+button:hover{
+  transform: rotate(2deg) scale(0.9);
+}

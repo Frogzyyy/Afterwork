@@ -1,0 +1,10 @@
+<div class="recipe-card" [style.background-image]="'url('+recipe.imageURL[0]">
+    <h1>
+        {{recipe.title|titlecase}}
+        <p>
+            <a (click)="onViewUserProfile(author.id)" class="author">
+            by {{author.name}}
+            </a>
+        </p>
+    </h1>
+</div>

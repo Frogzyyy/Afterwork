@@ -1,6 +1,6 @@
 <div class="container">
-
     <div class="user-profile">
+
         <img *ngIf="!user.profilePictureURL" class="profile-picture" src="../assets/img/profile-pictures/profile-picture.png">
         <img *ngIf="user.profilePictureURL" class="profile-picture" src="{{user.profilePictureURL}}" alt="">
         <h1>{{user.name}}</h1>
@@ -15,7 +15,7 @@
         <div *ngIf="userRecipes.length != 0">
             <h2>{{user.name}}'s recipes</h2>
             <div class="item">
-                <app-recipe *ngFor="let recipe of userRecipes" (click)="onViewRecipe(recipe.id)" [recipe]="recipe"></app-recipe>
+                <app-recipe-card *ngFor="let recipe of userRecipes" (click)="onViewRecipe(recipe.id)" [recipe]="recipe"></app-recipe-card>
             </div>
         </div>
 

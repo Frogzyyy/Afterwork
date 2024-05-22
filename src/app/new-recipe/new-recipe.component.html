@@ -1,38 +1,40 @@
-<div>
+<div class="container">
     <h2>New Recipe</h2>
-    <form [formGroup]="recipeForm">
-
-        <label for="title">Recipe Name</label>
-        <input type="text" id="title" formControlName="title">
-
-        <label for="imageURL">image URL</label>
-        <input type="text" id="imageURL" formControlName="imageURL">
-
-        <h2>Types</h2>
-
-        <label for="savoury">savoury</label>
-        <input type="checkbox" id="savoury" name="savoury" value="savoury" formControlName="types">
-        
-        <label for="dessert">dessert</label>
-        <input type="checkbox" id="dessert" name="dessert" value="dessert" formControlName="types">
-
-        <label for="sauce">sauce</label>
-        <input type="checkbox" id="sauce" value="sauce" formControlName="types">
-
-        <label for="cocktail">cocktail</label>
-        <input type="checkbox" id="cocktail" value="cocktail" formControlName="types">
-
-        <label for="pastry">pastry</label>
-        <input type="checkbox" id="pastry" value="pastry" formControlName="types">
-
-        <label for="prep">prep</label>
-        <input type="checkbox" id="prep" value="prep" formControlName="types">
-
-        <label for="ice-cream">ice-cream</label>
-        <input type="checkbox" id="ice-cream" value="ice-cream" formControlName="types">
-
-        <div class="action-button">
-            <button type="submit" (click)="onSubmitForm()">Save</button>
-        </div>
-    </form>
+    <div class="form">
+        <form [formGroup]="recipeForm">
+            <label for="title">Recipe Name</label>
+            <input type="text" id="title" formControlName="title">
+            
+    
+            <label for="imageURL">Image URL</label>
+            <input type="text" id="imageURL" formControlName="imageURL">
+    
+            <h2>Types</h2>
+    
+            <label for="savoury">savoury</label>
+            <input type="checkbox" id="savoury" name="savoury" value="savoury" formControlName="types">
+            
+            <label for="dessert">dessert</label>
+            <input type="checkbox" id="dessert" name="dessert" value="dessert" formControlName="types">
+    
+            <label for="sauce">sauce</label>
+            <input type="checkbox" id="sauce" value="sauce" formControlName="types">
+    
+            <label for="cocktail">cocktail</label>
+            <input type="checkbox" id="cocktail" value="cocktail" formControlName="types">
+    
+            <label for="pastry">pastry</label>
+            <input type="checkbox" id="pastry" value="pastry" formControlName="types">
+    
+            <label for="prep">prep</label>
+            <input type="checkbox" id="prep" value="prep" formControlName="types">
+    
+            <label for="ice-cream">ice-cream</label>
+            <input type="checkbox" id="ice-cream" value="ice-cream" formControlName="types">
+    
+            <div class="action-button">
+                <button type="submit" (click)="onSubmitForm()">Save</button>
+            </div>
+        </form>
+    </div>
 </div>

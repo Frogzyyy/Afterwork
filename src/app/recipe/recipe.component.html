@@ -1,10 +1,51 @@
-<div class="recipe" [style.background-image]="'url('+recipe.imageURL[0]">
-    <h1>
-        {{recipe.title|titlecase}}
-        <p>
-            <a (click)="onViewUserProfile(author.id)" class="author">
-            by {{author.name}}
-            </a>
-        </p>
-    </h1>
+<div class="container">
+    <div class="recipe">
+        <h1>{{recipe.title}}</h1>
+        by <a class="author" (click)="onViewUserProfile()">{{author.name}}
+            <img *ngIf="!author.profilePictureURL" class="profile-picture" src="../assets/img/profile-pictures/profile-picture.png">
+            <img *ngIf="author.profilePictureURL" class="profile-picture" src="{{author.profilePictureURL}}" alt="">
+        </a>
+
+        <div *ngIf="recipe.types">
+            <h2>Recipe tags</h2>
+            <app-tags-section *ngFor="let type of recipe.types" [tag]="type"></app-tags-section>
+        </div>
+
+        <div *ngIf="recipe.imageURL">
+            <h2>Some Pictures</h2>
+            <div class="recipe-picture" >
+                <img *ngFor="let picture of recipe.imageURL" src="{{picture}}" alt="">
+            </div>
+        </div>
+
+        <div *ngIf="recipe.adNotes">
+            <h2>Additional Notes</h2>
+            <div class="item">
+                <app-additional-notes [adNotes]="recipe.adNotes"></app-additional-notes>
+            </div>
+        </div>
+
+        <div>
+            <h2>Ingredients</h2>
+            <div class="item">
+                <app-ingredient *ngFor="let ingredient of recipe.ingredients" [ingredient]="ingredient"></app-ingredient>
+            </div>
+        </div>
+
+        <div *ngIf="recipe.linkedRecipes">
+            <h2>Recipes you may need for this one</h2>
+            <div class="linked-recipes">
+                <app-linked-recipe *ngFor="let recipe of linkedRecipes" [recipe]="recipe"></app-linked-recipe>
+            </div>
+        </div>
+
+        <div *ngIf="recipe.method">
+            <h2>Recipe</h2>
+            <div class="item">
+                <ol>
+                    <app-recipe-method *ngFor="let step of recipe.method" [method]="step"></app-recipe-method>
+                </ol>
+            </div>
+        </div>
+    </div>
 </div>
